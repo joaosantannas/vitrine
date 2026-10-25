@@ -222,6 +222,10 @@ public class Hotseat extends FrameLayout implements Insettable {
         GradientDrawable background = new GradientDrawable();
         background.setColor(finalColor);
         background.setCornerRadius(cornerRadius);
+        // Vitrine: borda fina e clara, que simula a borda refletiva do vidro
+        int strokeWidth = (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, 1f, getResources().getDisplayMetrics());
+        background.setStroke(strokeWidth, Color.argb(64, 255, 255, 255));
         InsetDrawable bg = new InsetDrawable(background,
                 insetHorizontalLeft, insetVerticalTop, insetHorizontalRight, insetVerticalBottom);
         setBackground(bg);
